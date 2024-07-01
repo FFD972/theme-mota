@@ -15,3 +15,6 @@ function register_custom_menus() {
     ));
 }
 add_action('init', 'register_custom_menus');
+
+// Image mis en avant
+add_theme_support("post-thumbnails");

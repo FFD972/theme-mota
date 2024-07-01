@@ -9,4 +9,138 @@ Version: 1.0
 Tags: nathalie mota, photographie, portfolio, galerie, responsive, clean design
 Text Domain: photographe
 */
-/******  M O D A L E  ******//*# sourceMappingURL=style.css.map */
+/* font-display: swap; 
+le navigateur affiche une police de secouren attendant le chargemet */
+/****** SpaceMono ******/
+@font-face {
+  font-family: "SpaceMono";
+  src: url("fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("fonts/SpaceMono-BoldItalic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("fonts/SpaceMono-Italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "SpaceMono";
+  src: url("fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+/****** Poppins ******/
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Italic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Light.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-LightItalic.ttf") format("truetype");
+  font-display: swap;
+  font-style: italic;
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("fonts/Poppins-Regular.ttf") format("truetype");
+  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+}
+/******  M O D A L E  ******/
+.modale {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modale-content {
+  background-color: #FFF;
+  border: 5px solid black;
+  padding: 20px;
+  width: 780px;
+  height: 770px;
+  margin: 0 25% 0 27%;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.031372549);
+}
+
+nav {
+  margin-right: 100px;
+}
+
+.logo {
+  margin-left: 100px;
+}
+
+.logo img {
+  max-width: 250px;
+}
+
+/*********** Menu ***********/
+.menu {
+  display: flex;
+  gap: 50px;
+}
+
+.menu li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-family: "SpaceMono", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu a:hover {
+  font-weight: 700;
+}
+
+/*********** Footer ***********/
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px black solid;
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
