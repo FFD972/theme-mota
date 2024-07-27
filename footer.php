@@ -7,7 +7,10 @@
                     'menu_class' => 'menu',
                     ));
             ?>
+            
         </div>
+        <p>TOUS DROITS RÉSERVÉS</p>
     </footer>
+    <?php wp_footer(); ?>
 </body>
 </html>

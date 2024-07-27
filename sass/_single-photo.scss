@@ -1,0 +1,264 @@
+///////     S E C T I O N  S U P E R I E U R E       ///////
+.singlePhoto {
+    width: 100%;
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap : 20px;
+
+    &-infos {
+        width: 100%;
+        max-width: 590px; 
+        padding-bottom: 3em;
+        font-family: 'SpaceMono';
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-bottom: 1px solid $color-black;
+    }
+
+    .singletitle { 
+        font-family: 'SpaceMono';
+        line-height: 1;
+        font-size: 66px;
+        font-weight: 400;
+        font-style: italic;
+        margin: 0;
+    }
+
+    &-img {
+        width: 100%;
+        max-width: 590px;  
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+    }
+}
+
+///////     S E C T I O N  C E N T R A L E       ///////
+.sectionCentrale {  
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.centrale {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $color-black;
+    gap: 20px;
+}
+
+.centraleLeft {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'SpaceMono';
+    text-align: center;
+}
+
+.centraleLeft-btn {
+    width: 20em;
+    height: 50px; 
+    color: $color-black;
+    padding: 15px 30px;
+    font-size: 13px;
+    font-family: 'SpaceMono';
+    border: none;
+    border-radius: 2px;   
+    transition: 0.5s ease-in-out;
+        
+    &:hover {
+        background: $color-black;
+        color: $color-white;   
+    }
+}
+
+.centraleRight {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.arrows {
+    display: flex;
+    gap: 1em;
+
+    .imgArrow-svg {
+        width: 40px;
+        height: 30px;
+    }
+}
+
+
+// Vignettes Hover
+.div-vignettes {
+    position: relative;
+    width: 100%;
+    height: 100px; 
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px
+}
+
+.conteneur-vignette-precedent, .conteneur-vignette-suivant {
+    width: 100px;
+    height: 80px; 
+    background-size: cover;
+    background-position: center;
+    display: none;
+}
+
+.arrows-left:hover ~ .div-vignettes .conteneur-vignette-precedent {
+    display: block;
+}
+
+.arrows-right:hover ~ .div-vignettes .conteneur-vignette-suivant {
+    display: block;
+}
+
+
+///////     S E C T I O N   I N F E R I E U R E    ///////
+
+.sectionInferieure {
+    width: 100%;
+    max-width : 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+    &-TitleH3 {
+        margin-top: 4em;
+        @include title-h3($color-black);
+    }
+
+    &-MainDiv {
+        width: 100%;
+        max-width: 1200px; 
+        display: flex;
+        justify-content: center;
+    }
+
+    &-Div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1em;
+        margin: 2em 0 5em 0;
+       
+    }
+}
+
+
+// T E M P L A T E  P A R T   >>> Block_photos.php
+
+.blockPhoto {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 9/7.5;
+
+    &-lien {
+        display: none;
+    }
+
+    &-post {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+
+// Partie  H O V E R 
+.blockHover { 
+    position: relative;
+    @include overlayPosition();
+    opacity: 0;
+        
+    &:hover {
+        opacity: 1;
+    }
+
+    &-fullscreen {
+        color: $color-white;
+        position: absolute;
+        bottom: 450px; 
+        right: 25px;
+        z-index: 10;
+        font-size: 25px;
+    }
+
+    &-eye{
+        color: $color-white;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        z-index: 20;
+        font-size: 40px;
+    }
+}
+
+.blockHover-reference {
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 10px;
+
+    .ref-img, .ref-categories {
+        @include position-Ref-Categories();
+    }
+}
+
+
+
+// M E D I A - Q U E R I E S
+@media (max-width: 1200px) {
+    .singlePhoto {
+        @include dispositionFlexCenter();
+        flex-direction: column-reverse;
+    }
+    .centraleRight {
+        display: none;
+    }
+    .centrale, .sectionInferieure {
+        @include dispositionFlexCenter();
+    }
+    .centraleLeft {
+        display: flex;
+        flex-direction: column;
+    }
+    .centraleLeft-btn {
+        margin: 16px;
+    }
+    .sectionInferieure-Div {
+        @include dispositionFlexCenter();
+        flex-direction: column;
+        gap: 3em;
+    }
+}

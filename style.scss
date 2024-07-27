@@ -9,33 +9,49 @@ Tags: nathalie mota, photographie, portfolio, galerie, responsive, clean design
 Text Domain: photographe
 */
 
+
+// VARIABLE globale utilisable dans tout les fichiers 
+
 @import 'sass/fonts';
+@import 'sass/variables';
 @import 'sass/modale';
+@import 'sass/single-photo';
+
+// prochain fichier scss : header, footer
 body {
-    margin: 0;
+max-width: $largeurBody;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+height: auto;
+
 }
 
 header {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    width: 100%;
+    justify-content: center;
+    max-width: $largeurBody;
     height: 80px;
-    box-shadow: 0 4px 4px 0 #00000008;
-
+    box-shadow: 0 4px 4px 0 $color-boxshadow;
 }
 
-nav {
-    margin-right: 100px;
-}
+.divHeader {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 1em 0 1em ;
+} 
 
 .logo {
-    margin-left: 100px;
+ display: flex;
+ align-items: center;
 }
 
 .logo img {
-    max-width: 250px;
+    max-width: 216px;
+    max-height: 14px;
 }
 
 /*********** Menu ***********/
@@ -44,6 +60,7 @@ nav {
 .menu {
     display: flex;
     gap: 50px;
+    padding: 0;
 }
 
 .menu li {
@@ -54,7 +71,7 @@ nav {
 }
 
 .menu a {
-    color: black;
+    color: $color-black;
     text-decoration: none;
     font-family: 'SpaceMono', sans-serif;
     font-weight: 400;
@@ -65,12 +82,44 @@ nav {
     font-weight: 700;
 }
 
+.burger {
+    display: none;
+}
+
+
+
 /*********** Footer ***********/
 
 footer {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px black solid;
-    width: 100%;
+    flex-direction: row; // a revoir avce le body
+    border-top: 1px $color-black solid;
 }
+
+
+@media (max-width: 800px) {
+    #navMenu {
+        display: none;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .burger {
+        display: block;
+        margin-right: 1em;
+    }
+}
+
+@media (max-width: 330px) {
+    .divHeader {
+        @include dispositionFlexCenter();
+        flex-direction: column;
+    }
+} 

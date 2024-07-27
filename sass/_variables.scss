@@ -1,0 +1,49 @@
+//   T A I L L E S   //
+
+$largeurBody: 1440px; 
+$marginSide: 50px;
+
+
+
+//   C O U L E U R S  //
+
+$color-black : black;
+$color-white : white;
+$color-boxshadow :#00000015;
+$color-grey : #B8BBC2;
+
+
+
+
+//   M I X I N S   //
+ @mixin title-h3($color-black) {
+font-family: 'SpaceMono';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 26.66px;
+    letter-spacing: 0.1em;
+}
+
+// Overlay 
+@mixin overlayPosition ($color: rgba(0, 0, 0, 0.5), $transition-time: 0.5s) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    transition: opacity $transition-time;
+}
+
+// Position de Ref et cat. dans Overlay
+@mixin position-Ref-Categories() {
+    font-family:'SpaceMono';
+    margin: 0 25px 0 25px;
+    color: $color-white;
+}
+
+@mixin dispositionFlexCenter () {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
