@@ -1,0 +1,249 @@
+//_______  P A G E  D' A C C U E I L  _______//
+// Hero
+.containerHero {
+  @include dispositionFlexCenter();
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  h1 {
+    font-family: "SpaceMono";
+    text-transform: uppercase;
+    color: $color-white;
+    font-style: italic;
+    font-weight: 700;
+    font-size: 10vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    -webkit-text-fill-color: transparent; // texte transparent
+    -webkit-text-stroke: 3px $color-white; // contour de 3px avec une couleur blanche
+    z-index: 2;
+  }
+
+  &-images {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+//_______  F I L T R E S  _______//
+
+.containerFiltres {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  margin: 4em auto 2em auto;
+}
+.containerFiltresGauche {
+  width: 48%;
+  max-width: 48%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.containerFiltresDroite {
+  width: 51%;
+  max-width: 51%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.containerFiltres-block {
+  width: 16em;
+  border-radius: 8px;
+}
+
+.menu-deroulant {
+  width: 260px;
+  height: 45px;
+  border: 1px solid #b8bbc2;
+  border-radius: 8px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-titre {
+  padding-left: 10px;
+}
+
+.cache {
+  display: none;
+}
+
+.menu-fleche {
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.apparition {
+  animation: fade-in-top-filtres 0.5s ease-in-out;
+}
+
+.rotation {
+  transform: rotate(180deg) translateX(10px);
+  transition: transform 0.5s ease-in-out;
+}
+
+.menu-ouvert {
+  border: 1.3px solid;
+}
+
+.menu-options {
+  display: none;
+  position: absolute;
+  flex-direction: column;
+  width: 260px;
+  border: 1px solid $color-grey;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background-color: $color-white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 18px;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 5;
+}
+
+.menu-option {
+    cursor: pointer;
+    height: 45px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.vide {
+  height: 45px;
+  cursor: pointer;
+}
+
+.dernier {
+  border-radius: 0 0 8px 8px;
+}
+
+.menu-option:hover {
+  background-color: $color-Tertiare;
+}
+
+.menu-option:active {
+  background-color: $color-secondaire;
+}
+
+.menu-option:focus {
+  background-color: $color-red;
+}
+
+.menu-option.selectionne {
+  background-color: $color-red;
+  color: $color-white;
+}
+
+.menu-option.dernier-selectionne {
+  background-color: $color-red;
+  color: $color-white;
+  border-radius: 0 0 8px 8px;
+}
+
+/*_____  P H O T O S  _____ */
+.containerBlock {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+  &-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 595px);
+    gap: 1em;
+    margin-bottom: 3em;
+  }
+}
+
+.divBouton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-bottom: 3em;
+
+  #divBouton-chargerplus {
+    width: 20em;
+    height: 50px;
+    color: $color-black;
+    padding: 15px 30px;
+    font-size: 13px;
+    font-family: "SpaceMono";
+    border: none;
+    border-radius: 2px;
+    transition: 0.5s ease-in-out;
+    margin: 2em;
+    &:hover {
+      background: $color-black;
+      color: $color-white;
+    }
+  }
+}
+
+// M E D I A  -  Q U E R I E S
+
+@media (max-width: 1090px) {
+  .containerFiltres {
+    margin-top: 3em;
+  }
+
+  .containerFiltres,
+  .containerFiltresGauche {
+    @include dispositionFlexCenter();
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .containerFiltresDroite,
+  .containerFiltres-block {
+    @include dispositionFlexCenter();
+    gap: 1em;
+  }
+
+  .containerBlock-photos {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 470px) {
+  .containerHero {
+    h1 {
+      font-size: 6vh;
+      padding: 0 10px;
+    }
+  }
+}

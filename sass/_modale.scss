@@ -1,49 +1,53 @@
-/******  M O D A L E  ******/
+//_______  M O D A L E  _______//
 
 //  T E M P L A T E  -  P A R T E   //
-.affichageModale {
-
-
-}
 
 .overlay {
-    position: absolute;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: #333333d3;
+    background-color: $color-overlay;
+    z-index: 98; 
 }
 
-.modale { // taille en VH pour le responsive
-display: none;
+
+#divModale {
+    display: none;
     background-color: $color-white;
     border: 5px solid $color-black ;
-    width: 595px; 
-    height: 690px ;
+    width: 40vw; 
+    height: auto;
     flex-direction: column;
-    position: fixed;
-    top: 4em;
+    position: absolute;
+    top: 2em;
     left: 50%;
     transform: translateX(-50%);
     z-index: 99;
 
-    
+
     .modale__close {
         cursor: pointer;
         background: $color-white;
+        border-radius: 20px;
         position : absolute;
-        top: -2em;
-        right: 0em;
+        top: 0.4em;
+        right: 0.3em;
         border: none;
         font-size: large;
         transition: 0.3s all ease-in-out;
+
     }
 
     .modale__close:hover {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     }
 
     .modale__img {
         width: 100%;
+        margin: 1em 0 1em 0;
     }
 
     .modale__cf7 {
@@ -53,12 +57,20 @@ display: none;
     }
 }
 
+@media (max-width: 850px) {
+    #divModale {
+    width: 97%;
+    }
+}
 
-
-// C O N T A C T  F O R M  7 //
+//_______  C O N T A C T  -  F O R M  7  _______//
 
 .wpcf7-form {
     font-family: 'poppins';
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .formulaireCF7 {
@@ -83,7 +95,7 @@ display: none;
 .wpcf7-submit {
 display: flex;
 flex-direction: column;
-background-color: #D8D8D8; // ??? $color-grey ???
+background-color: #D8D8D8;
 font-family: 'SpaceMono', sans-serif;
 width: 100%;
 height: 5em;
@@ -91,3 +103,6 @@ border-radius: 4px;
 border: none;
 }
 
+.wpcf7-response-output { 
+    width: 70%;
+}

@@ -1,0 +1,155 @@
+//_______  M E N U   N A V I G A T I O N  _______//
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: $largeurBody;
+    height: 80px;
+    box-shadow: 0 4px 4px 0 $color-boxshadow;
+  }
+  
+  .divHeader {
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0 1em 0 1em;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  
+    img {
+      max-width: 216px;
+      max-height: 14px;
+    }
+  }
+  
+  #navMenu {
+    z-index: 99;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 50px;
+    padding: 0;
+  
+    li {
+      list-style: none;
+      @include dispositionFlexCenter();
+  
+      a {
+        color: $color-black;
+        text-decoration: none;
+        font-family: "SpaceMono", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+  
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  
+  .burgerBouton {
+    display: none;
+    cursor: pointer;
+  }
+  
+  //_______  F O O T E R  _______//
+  
+  footer {
+    width: 100%;
+    @include dispositionFlexCenter();
+    flex-direction: row;
+    border-top: 1px $color-black solid;
+  }
+  
+  .textFooter {
+    margin-left: 50px;
+  }
+  
+  //_______  M E D I A   Q U E R I E S  _______//
+  
+  @media (max-width: 800px) {
+    #navMenu {
+      display: none;
+    }
+  
+    .burgerBouton {
+      display: block;
+    }
+  
+    footer {
+      @include dispositionFlexCenter();
+      flex-direction: column;
+    }
+  
+    .textFooter {
+      margin-left: 0px;
+    }
+  
+    .menu {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+  
+
+    .navBurger {
+      display: none;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: $color-red;
+      position: absolute;
+      top: 80px;
+      height: 90vh;
+      width: 100%;
+      padding-top: 100px;
+      z-index: 999;
+      animation: slideIn 0.3s forwards; // Animation keyframe
+    }
+  
+    .navBurger.open {
+      display: flex;
+    }
+  
+    nav a {
+      padding: 10px;
+      font-size: 44px;
+      font-weight: 400;
+      line-height: 65.16px;
+      text-decoration: none;
+      color: $color-white !important;
+    }
+  
+  }
+  
+  @media (max-width: 340px) {
+    .divHeader {
+      @include dispositionFlexCenter();
+      flex-direction: column;
+      gap: 1em;
+    }
+  
+    .navBurger {
+      position: absolute;
+      top: 70px;
+    }
+  }
+  
+  //___ K E Y F R A M E___//
+  @keyframes slideIn {
+    from {
+      right: -100%; 
+    }
+    to {
+      right: 0; 
+    }
+  }
+

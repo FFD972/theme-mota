@@ -32,7 +32,7 @@ if ($custom_query->have_posts()) :
 <section class="singlePhoto">
     <div class="singlePhoto-infos">
 		<h2 class="singletitle"><?php echo the_title(); ?> </h2>
-		<p>RÉFÉRENCE : <?php echo esc_html($reference);?> </p>
+		<p>RÉFÉRENCE : <span id="reference"><?php echo esc_html($reference);?></span> </p>
 		<p>CATÉGORIE : 
 			<?php
 			if (is_array($categories)) {
@@ -63,7 +63,7 @@ if ($custom_query->have_posts()) :
 		<p>ANNÉE : <?php echo esc_html($annee);?> </p>
 	</div>
 
-<!--  D R O I T E  -->
+<!--  D R O I T E  (PHOTO) -->
 	<div class="singlePhoto-img">
 		<?php the_post_thumbnail('large');?>
 	</div>
@@ -80,7 +80,6 @@ if ($custom_query->have_posts()) :
 		</div>
 
 		<div class="centraleRight">
-			<!-- Définition des bornes du tableau pour créer une boucle -->
 			<?php 
 				// Requête pour obtenir le dernier post
 				$args_dernier = array(

@@ -12,16 +12,17 @@
     <body>
         <header>
             <div class="divHeader">
-                <!-- Custom_logo = modifiable dans WP -->
+                <!-- Modifiable dans WP -->
                 <div class="logo">
                     <?php the_custom_logo() ?>
                 </div>
-            <!-- Icone du Menu Burger -->
-            <div class="burger">
-                <img class="burger-open" src="<?php echo get_stylesheet_directory_uri() . '/images/icone-burger.png' ?>" alt=" icone menu burger" />
-            </div>
+                <!-- Menu burger -->
+                <div>
+                    <img class="burgerBouton" src="<?php echo get_stylesheet_directory_uri() . '/images/icone-burger.png' ?>" alt="Icone du menu burger" />
+                </div>
+
             <!-- Menu principale = modifiable dans WP -->
-            <nav id="navMenu">
+            <nav id="navMenu" class="navBurger">
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'menu_principal',
@@ -30,9 +31,10 @@
                 ));
                 ?>
             </nav>
+           
            </div> 
         </header>
         <!-- Ajout de la modale -->
-        <div class="affichageModale" >
+        <div id="affichageModale" >
             <?php get_template_part('/template_part/modale'); ?>
         </div> 

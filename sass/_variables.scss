@@ -1,21 +1,28 @@
-//   T A I L L E S   //
+//_______ T A I L L E S  _______//
 
 $largeurBody: 1440px; 
 $marginSide: 50px;
 
 
-
-//   C O U L E U R S  //
+//_______  C O U L E U R S  _______//
 
 $color-black : black;
 $color-white : white;
+$color-dark-blue:#313144;
 $color-boxshadow :#00000015;
+$color-overlay : #020202d3;
+//Red
+$color-red : #E00000;
+$color-secondaire : #FE5858;
+$color-Tertiare : #FFD6D6;
+//Grey
 $color-grey : #B8BBC2;
+$color-dark-grey: #C4C4C4;
+$color-light-grey : #E5E5E5;
 
 
 
-
-//   M I X I N S   //
+//_______  M I X I N S  _______//
  @mixin title-h3($color-black) {
 font-family: 'SpaceMono';
     font-size: 18px;
@@ -25,7 +32,7 @@ font-family: 'SpaceMono';
 }
 
 // Overlay 
-@mixin overlayPosition ($color: rgba(0, 0, 0, 0.5), $transition-time: 0.5s) {
+@mixin overlayPosition ($color: rgba(0, 0, 0, 0.5), $transition-time: 0.3s) {
     position: absolute;
     top: 0;
     left: 0;
@@ -42,7 +49,7 @@ font-family: 'SpaceMono';
     color: $color-white;
 }
 
-@mixin dispositionFlexCenter () {
+@mixin dispositionFlexCenter() {
     display: flex;
     align-items: center;
     justify-content: center;

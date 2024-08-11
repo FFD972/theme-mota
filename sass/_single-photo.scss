@@ -1,4 +1,4 @@
-///////     S E C T I O N  S U P E R I E U R E       ///////
+//_______  S E C T I O N  -  S U P E R I E U R E  _______//
 .singlePhoto {
     width: 100%;
     margin-top: 2em;
@@ -44,7 +44,7 @@
     }
 }
 
-///////     S E C T I O N  C E N T R A L E       ///////
+//_______  S E C T I O N  -  C E N T R A L E  _______//
 .sectionCentrale {  
     width: 100%;
     display: flex;
@@ -106,7 +106,7 @@
 }
 
 
-// Vignettes Hover
+// Vignettes - Hover
 .div-vignettes {
     position: relative;
     width: 100%;
@@ -116,7 +116,8 @@
     margin-top: 20px
 }
 
-.conteneur-vignette-precedent, .conteneur-vignette-suivant {
+.conteneur-vignette-precedent,
+.conteneur-vignette-suivant {
     width: 100px;
     height: 80px; 
     background-size: cover;
@@ -124,16 +125,18 @@
     display: none;
 }
 
-.arrows-left:hover ~ .div-vignettes .conteneur-vignette-precedent {
+.arrows-left:hover ~ .div-vignettes 
+.conteneur-vignette-precedent {
     display: block;
 }
 
-.arrows-right:hover ~ .div-vignettes .conteneur-vignette-suivant {
+.arrows-right:hover ~ .div-vignettes 
+.conteneur-vignette-suivant {
     display: block;
 }
 
 
-///////     S E C T I O N   I N F E R I E U R E    ///////
+//_______  S E C T I O N  -  I N F E R I E U R E  _______//
 
 .sectionInferieure {
     width: 100%;
@@ -168,7 +171,7 @@
 }
 
 
-// T E M P L A T E  P A R T   >>> Block_photos.php
+//_______  T E M P L A T E  P A R T   >>> Block_photos.php
 
 .blockPhoto {
     position: relative;
@@ -193,32 +196,47 @@
 }
 
 
-// Partie  H O V E R 
+// Partie  H O V E R (overlay)
 .blockHover { 
-    position: relative;
-    @include overlayPosition();
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
     opacity: 0;
-        
+
     &:hover {
         opacity: 1;
+        background-color: $color-overlay;
     }
 
     &-fullscreen {
+        cursor: pointer;
         color: $color-white;
         position: absolute;
-        bottom: 450px; 
-        right: 25px;
+        top: 3%;
+        right: 8%;
         z-index: 10;
         font-size: 25px;
+        background-color: transparent;
+        border: none;
+        transform: translate(50%, 50%);
     }
 
     &-eye{
-        color: $color-white;
         position: absolute;
         top: 50%;
         right: 50%;
+        transform: translate(50%, -50%);
         z-index: 20;
         font-size: 40px;
+        & > a {
+        color: $color-white;
+        }
     }
 }
 
@@ -237,7 +255,7 @@
 
 
 
-// M E D I A - Q U E R I E S
+//_______  M E D I A  -  Q U E R I E S  _______//
 @media (max-width: 1200px) {
     .singlePhoto {
         @include dispositionFlexCenter();
